@@ -4,5 +4,4 @@ export const FOOTER_TEXT = "تهیه شده با عشق توسط هولدینگ 
 
 export const LOCKED_BOYS = ["حمید افقه", "سیامک قدسی"] as const;
 
-export const WHEEL_RESULT =
-  "حمید افقه به همراه سیامک قدسی رابطه سه نفره";
+export const WHEEL_RESULT = "حمید افقه و سیامک قدسی";
