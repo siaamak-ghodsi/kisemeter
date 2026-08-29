@@ -508,6 +508,192 @@ input {
   }
 }
 
+.welcome-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100vw, 430px);
+  margin-inline: auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem calc(2rem + env(safe-area-inset-bottom, 0px));
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.welcome-hero {
+  animation: rise-in 0.7s ease both;
+  margin-bottom: 1.75rem;
+}
+
+.welcome-kicker {
+  margin: 0 0 0.55rem;
+  color: var(--rose);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.welcome-title {
+  margin: 0;
+  font-size: clamp(1.55rem, 6.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--rose-deep);
+}
+
+.welcome-sub {
+  margin: 0.85rem auto 0;
+  max-width: 18rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.gift-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.5rem;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  animation: gift-invite 2.4s ease-in-out infinite;
+}
+
+.gift-btn:disabled {
+  cursor: default;
+}
+
+.gift-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 182, 203, 0.55), transparent 70%);
+  z-index: 0;
+  animation: soft-pulse 2.8s ease-in-out infinite;
+}
+
+.gift-box {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  height: 130px;
+  display: block;
+}
+
+.gift-body {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  height: 78px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #e87a96, var(--rose-deep));
+  box-shadow: 0 14px 28px rgba(184, 61, 95, 0.28);
+  overflow: hidden;
+}
+
+.gift-lid {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 28px;
+  height: 34px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(160deg, #f29ab0, #d45a7a);
+  box-shadow: 0 4px 10px rgba(184, 61, 95, 0.22);
+  transform-origin: left center;
+  transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 2;
+}
+
+.gift-bow {
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  width: 36px;
+  height: 28px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 30% 50%, #fff0f4 0 38%, transparent 40%),
+    radial-gradient(circle at 70% 50%, #fff0f4 0 38%, transparent 40%),
+    linear-gradient(#ffe8ef, #ffe8ef);
+  border-radius: 40%;
+  box-shadow: 0 2px 0 rgba(184, 61, 95, 0.15);
+}
+
+.gift-bow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff7fa;
+  border: 2px solid #f7c2d0;
+}
+
+.gift-ribbon-v,
+.gift-ribbon-h {
+  position: absolute;
+  background: linear-gradient(180deg, #fff5f8, #f8c9d4);
+}
+
+.gift-ribbon-v {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 18px;
+  transform: translateX(-50%);
+}
+
+.gift-ribbon-h {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 18px;
+  transform: translateY(-50%);
+}
+
+.gift-btn.opening .gift-lid {
+  transform: rotate(-42deg) translateY(-8px);
+}
+
+.gift-btn.opening {
+  animation: none;
+}
+
+.gift-hint {
+  position: relative;
+  z-index: 1;
+  color: var(--rose-deep);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.welcome-footer {
+  margin-top: 2.5rem;
+}
+
+@keyframes gift-invite {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 @media (min-width: 480px) {
   .app-shell {
     padding-top: 1.75rem;
