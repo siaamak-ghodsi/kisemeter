@@ -107,6 +107,12 @@ export async function deleteBoy(id: string) {
     [id],
   );
   if (!rows[0]) throw new Error("پیدا نشد");
-  if (rows[0].locked) throw new Error("این دو تا حذف‌شدنی نیستن 💕");
-  await pool.query(`DELETE FROM boys WHERE id = $1 AND locked = FALSE`, [id]);
+  const isProtected =
+    rows[0].locked ||
+    LOCKED_BOYS.includes(rows[0].name as (typeof LOCKED_BOYS)[number]);
+  if (isProtected) throw new Error("این دو تا حذف‌شدنی نیستن 💕");
+  await pool.query(
+    `DELETE FROM boys WHERE id = $1 AND locked = FALSE AND name <> ALL($2::text[])`,
+    [id, [...LOCKED_BOYS]],
+  );
 }
