@@ -9,7 +9,7 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "کیس متر | برای غزاله",
+  title: "کیس متر | تولدت مبارک غزاله جون",
   description: "اپلیکیشن امتیازدهی پسرها مخصوص غزاله — کیس متر",
 };
 

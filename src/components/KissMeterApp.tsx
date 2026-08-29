@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { APP_NAME, DEDICATED_TO, FOOTER_TEXT } from "@/lib/constants";
+import { APP_NAME, HERO_DEDICATION, FOOTER_TEXT } from "@/lib/constants";
 import type { Boy } from "@/lib/types";
 import { AddBoyFlow } from "./AddBoyFlow";
 import { FortuneWheel } from "./FortuneWheel";
@@ -52,7 +52,7 @@ export function KissMeterApp({ initialBoys, initialError = null }: Props) {
   return (
     <div className="app-shell">
       <header className="hero">
-        <p className="hero-for">برای {DEDICATED_TO}</p>
+        <p className="hero-for">{HERO_DEDICATION}</p>
         <h1 className="brand">{APP_NAME}</h1>
         <p className="hero-tagline">
           کیو بیشتر دوست داری؟ امتیاز بده، رتبه‌بندی کن، گردونه رو بچرخون.
